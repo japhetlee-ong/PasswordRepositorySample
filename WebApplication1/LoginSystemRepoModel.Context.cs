@@ -27,5 +27,6 @@ namespace WebApplication1
     
         public virtual DbSet<TBL_LOGIN> TBL_LOGIN { get; set; }
         public virtual DbSet<TBL_USER_DETAILS> TBL_USER_DETAILS { get; set; }
+        public virtual DbSet<TBL_USER_PASSWORDS> TBL_USER_PASSWORDS { get; set; }
     }
 }

@@ -12,13 +12,15 @@ namespace WebApplication1
     using System;
     using System.Collections.Generic;
     
-    public partial class TBL_USER_DETAILS
+    public partial class TBL_USER_PASSWORDS
     {
         public int ID { get; set; }
-        public string NAME { get; set; }
-        public string USER_EMAIL { get; set; }
-        public Nullable<int> UID { get; set; }
+        public string SITE_NAME { get; set; }
+        public string SITE_PASSWORD { get; set; }
+        public int USER_ID { get; set; }
         public System.DateTime DATE_CREATED { get; set; }
+        public System.DateTime DATE_MODIFIED { get; set; }
+        public bool IS_DELETED { get; set; }
     
         public virtual TBL_LOGIN TBL_LOGIN { get; set; }
     }

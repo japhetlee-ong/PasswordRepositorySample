@@ -18,6 +18,7 @@ namespace WebApplication1
         public TBL_LOGIN()
         {
             this.TBL_USER_DETAILS = new HashSet<TBL_USER_DETAILS>();
+            this.TBL_USER_PASSWORDS = new HashSet<TBL_USER_PASSWORDS>();
         }
     
         public int ID { get; set; }
@@ -27,5 +28,7 @@ namespace WebApplication1
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TBL_USER_DETAILS> TBL_USER_DETAILS { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TBL_USER_PASSWORDS> TBL_USER_PASSWORDS { get; set; }
     }
 }

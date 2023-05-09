@@ -16,7 +16,9 @@
 
 </head>
 <body>
-    <div> 
+    <div>
+        <h4 style="text-align:center">My Password List</h4>
+        <button class="btn btn-info btn-sm" type="button" data-bs-toggle="modal" data-bs-target="#add-password-modal">Add new password</button>
         <table class="table">
             <thead>
                 <tr>
@@ -27,9 +29,9 @@
                 </tr>
             </thead>
             <tbody>
-                @{ 
-                    foreach(var data in Model.PasswordList) 
-                    { 
+                @{
+                    foreach (var data in Model.PasswordList)
+                    {
                         <tr>
                             <th scope="row">@data.ID</th>
                             <td>@data.SITE_NAME</td>
@@ -45,6 +47,20 @@
                 }
             </tbody>
         </table>
+    </div>
+
+    <div id="add-password-modal" class="modal fade" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Add new student</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    @Html.Partial("_AddPassword", Model.PasswordModel)
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>

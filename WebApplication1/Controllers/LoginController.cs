@@ -12,6 +12,11 @@ namespace WebApplication1.Controllers
         // GET: Login
         public ActionResult Index()
         {
+            if (Session["user_id"] != null)
+            {
+                return RedirectToAction("Index", "Dashboard");
+            }
+
             return View();
         }
 
@@ -31,6 +36,7 @@ namespace WebApplication1.Controllers
                         return View();
                     }
 
+
                     FormsAuthentication.SetAuthCookie(data.ID.ToString(), true);
                     FormsAuthenticationTicket ticket = new FormsAuthenticationTicket(data.ID, data.USERNAME, DateTime.Now, DateTime.Now.AddDays(1), true, data.ID.ToString());
                     string eCookie = FormsAuthentication.Encrypt(ticket);
@@ -39,7 +45,7 @@ namespace WebApplication1.Controllers
                         Path = FormsAuthentication.FormsCookiePath
                     };
 
-                    Session["admin_id"] = data.ID;
+                    Session["user_id"] = data.ID;
                     Session.Timeout = 1440;
 
                     Response.Cookies.Add(httpCookie);
