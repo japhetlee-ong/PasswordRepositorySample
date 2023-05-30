@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -47,9 +48,36 @@ namespace WebApplication1.Controllers
         }
 
         //[HttpPost]
-        //public ActionResult Index(PasswordModel)
+        //public ActionResult Index(PasswordModel _MODEL)
         //{
+        //    var userId = (Int32)Session["user_id"];
 
+        //    var ePassword = Helpers.Encryption.Encrypt(_MODEL.SITE_PASSWORD);
+
+        //    var data = new TBL_USER_PASSWORDS()
+        //    {
+        //        SITE_NAME = _MODEL.SITE_NAME,
+        //        SITE_PASSWORD = ePassword,
+        //        DATE_CREATED = DateTime.Now,
+        //        IS_DELETED = false,
+        //        DATE_MODIFIED = DateTime.Now,
+        //        USER_ID = userId
+        //    };
+
+        //    using (PassRepoDbEntities entities = new PassRepoDbEntities())
+        //    {
+        //        entities.TBL_USER_PASSWORDS.Add(data);
+
+        //        if (entities.SaveChanges() >= 1)
+        //        {
+        //            //RETURN HERE
+        //        }
+        //        else
+        //        {
+        //            //RETURN HERE
+        //        }
+
+        //    }
         //}
 
     }
